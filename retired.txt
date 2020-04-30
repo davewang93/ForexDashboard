@@ -1,0 +1,74 @@
+#This is for indicators that I no longer am using
+
+'''
+BOE/XUDLUSS : gbpusd
+BOE/XUDLJYD : usdjpy
+RBA/FXRUSD : audusd
+ECB/EURUSD : eurusd
+CHRIS/ICE_MP1 : gpbusdfut1
+CHRIS/ICE_MP2 : gpbusdfut2
+CHRIS/CME_M6E1 : eurusdfut
+CHRIS/CME_J71 : yenfut1
+
+my_cursor.execute("SELECT DATE FROM gbpusd ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("BOE/XUDLUSS", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("gbpusd",engine,if_exists='append')
+
+my_cursor.execute("SELECT DATE FROM usdjpy ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("BOE/XUDLJYD", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("usdjpy",engine,if_exists='append')
+
+my_cursor.execute("SELECT DATE FROM audusd ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("RBA/FXRUSD", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("audusd",engine,if_exists='append')
+
+my_cursor.execute("SELECT DATE FROM eurusd ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("ECB/EURUSD", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("eurusd",engine,if_exists='append')
+
+my_cursor.execute("SELECT DATE FROM gbpusdfut1 ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("CHRIS/ICE_MP1", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("gbpusdfut1",engine,if_exists='append')
+
+my_cursor.execute("SELECT DATE FROM gbpusdfut2 ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("CHRIS/ICE_MP2", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("gbpusdfut2",engine,if_exists='append')
+my_cursor.execute("SELECT DATE FROM eurusdfut ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("CHRIS/CME_M6E1", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("eurusdfut",engine,if_exists='append')
+
+my_cursor.execute("SELECT DATE FROM yenfut1 ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("CHRIS/CME_J71", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("yenfut1",engine,if_exists='append')
+
+my_cursor.execute("SELECT DATE FROM audfut1 ORDER BY DATE DESC LIMIT 1")
+LastRecord = my_cursor.fetchall()
+LastDate = LastRecord[0][0]
+StartDate = LastDate.date() + timedelta(days=1)
+RawUpdateTable = ql.get("CHRIS/CME_AD1", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("audfut1",engine,if_exists='append')
+'''
