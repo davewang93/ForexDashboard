@@ -523,7 +523,7 @@ my_cursor.execute("SELECT DATE FROM frunemploy ORDER BY DATE DESC LIMIT 1")
 LastRecord = my_cursor.fetchall()
 LastDate = LastRecord[0][0]
 StartDate = LastDate.date() + timedelta(days=1)
-dataseries = fred.get_series('LRUN74TTFRQ156S',StartDate,)
+dataseries = fred.get_series('LMUNRLTTFRM647S',StartDate,)
 table = dataseries.reset_index()
 table = table.iloc[1:]
 table.columns = ['Date','Value']

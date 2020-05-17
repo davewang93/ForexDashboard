@@ -1,0 +1,5 @@
+ID,table,frequency
+DTWEXBGS,dollarindexbroad,daily (weekly lag)
+DTWEXAFEGS,dollarindexadvanced,daily (weekly lag)
+DGS10,10yrtreasbenchmark,daily
+GBP1MTD156N,uk1mlibor,daily

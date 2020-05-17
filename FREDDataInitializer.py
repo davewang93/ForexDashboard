@@ -80,7 +80,7 @@ BSCICP03ITM665S : itmanusentiment : monthly
 BSCICP03DEM665S : germmanusentiment : monthly
 BSCICP03FRM665S : frmanusentiment : monthly
 LMUNRRTTDEM156N : germunemploy : monthly
-LRUN74TTFRQ156S : frunemploy : monthly
+LMUNRLTTFRM647S : frunemploy : monthly
 LRUN64TTITQ156S : itunemploy : monthly
 JPNNGDP : jpgdp : quaterly 
 IR3TIB01JPQ156N : jpbankrate : quarterly
@@ -106,14 +106,14 @@ CPMNACSCAB1GQDE : germgdp : quarterly
 CPMNACSCAB1GQIT : itgdp : quarterly
 
 '''
-dataseries = fred.get_series('GBP1MTD156N')
+dataseries = fred.get_series('LRUN64TTITQ156S')
 table = dataseries.reset_index()
 #see end of doc for explanation of line below
 table.columns = ['Date','Value']
 #optional line to clean up null values at head of table
-#able = table.iloc[59:]
+table = table.iloc[60:]
 print(table.head())
-table.to_sql("test",engine)
+table.to_sql("itunemploy",engine)
 
 #have to do some manipulation data to return dataframe instead of series. per author:
 '''
