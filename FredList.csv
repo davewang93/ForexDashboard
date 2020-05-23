@@ -2,17 +2,9 @@ ID,table,frequency
 GDP,usgdp,quarterly
 CP,corpprofittaxed,quarterly
 A446RC1Q027SBEA,corpprofituntaxed,quarterly
-WALCL,fredtotalassets,wednesdays
-WORAL,fedassetsrepos,wednesdays
-WSHOMCB,fredassetsmbs,wednesdays
-TREAST,fredassetstreas,wednesdays
-SWPT,fedassetscbswaps,wednesdays
-WFCDA,fedassetsforeign,wednesdays
-M2,m2,mondays (monthly lag)
 GFDEGDQ188S,usdebtgdp,quarterly
 MTSDS133FMS,federalbudget,monthly
 HOUST,housingstarts,monthly
-RELACBW027SBOG,usrealestateloans,weekly (monthly lag?)
 DRSREACBS,delinquencyrealestatesecured,quarterly
 PERMIT,newbuildingpermits,monthly
 CPIAUCSL,usurbancpi,monthly
@@ -25,7 +17,6 @@ BSPRFT02GBM460S,ukfuturemanufacturingsurvey,monthly
 GBRPROMANMISMEI,uktotamanuoutput,monthly
 CPMEURNSAB1GQEU272020,eugdp27,quarterly
 EU28CPALTT01GPM,eucpiall,monthly
-ECBASSETSW,eucbassets,weekly
 PRMNTO01EUQ661S,eumanuprod,quarterly
 CPALTT01DEM657N,germcpiall,monthly
 CPALTT01FRM657N,frcpiall,monthly
