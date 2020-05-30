@@ -39,6 +39,9 @@ my_cursor = mydb.cursor()
 
 QuandlDF = pd.read_csv("QuandlList.csv", engine='python')
 
+CheckDate = QuandlDF
+
+
 for index,row in QuandlDF.iterrows():
     #create sql command
     sqlcmd = "SELECT DATE FROM " +row['table'] + " ORDER BY DATE DESC LIMIT 1"
@@ -53,3 +56,4 @@ for index,row in QuandlDF.iterrows():
     RawUpdateTable.to_sql(tableID,engine,if_exists='append')
     print(tableID)
     print(RawUpdateTable)
+ 
