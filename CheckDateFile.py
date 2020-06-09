@@ -39,7 +39,7 @@ CheckDate = pd.read_csv("MasterList.csv", engine='python')
 '''
 Purpose of this script is to grab last 2 dates in SQL tables and export them to CSV so I can quickly compare against the last value I have in my macro dashboard. 
 (Some of the tables in dashboard don't auto update to latest date which is a pain) 
-Grabbing the "Previous Date" value also allows me to quick check to make sure the API pulls are not skipping data
+Grabbing the "Previous Date" value also allows me to quickly check and make sure the API pulls are not skipping data
 '''
 for index,row in CheckDate.iterrows():
     sqlcmd = "SELECT DATE FROM " +row['table'] + " ORDER BY DATE DESC LIMIT 2"

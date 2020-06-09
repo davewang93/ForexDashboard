@@ -40,7 +40,6 @@ my_cursor = mydb.cursor()
 #import index file of all indicators
 FrdDF = pd.read_csv("FredList.csv", engine='python')
 FrdDailyDF = pd.read_csv("FredListDailies.csv", engine='python')
-FrdMaster = pd.read_
 
 #iterate through index file dataframe
 for index,row in FrdDF.iterrows():
@@ -82,11 +81,3 @@ for index,row in FrdDailyDF.iterrows():
     print(table)
     table.to_sql(tableID,engine,if_exists='append')
 
-for index,row in CheckDate.iterrows():
-    sqlcmd = "SELECT DATE FROM " +row['table'] + " ORDER BY DATE DESC LIMIT 1"
-    my_cursor.execute(sqlcmd)
-    LastRecord = my_cursor.fetchall()
-    LastDate = LastRecord[0][0]
-    CheckDate.loc[index,'Last Update'] = LastDate
-    
-CheckDate.to_csv('QuandlLatestDates.csv', index = False)
