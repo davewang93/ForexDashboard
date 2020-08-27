@@ -104,16 +104,17 @@ IRLTLT01AUM156N : au10yrbench : monthly
 CPMNACSCAB1GQFR : frgdp : quarterly
 CPMNACSCAB1GQDE : germgdp : quarterly
 CPMNACSCAB1GQIT : itgdp : quarterly
+PSAVERT : ussavings : monthly
 
 '''
-dataseries = fred.get_series('LRUN64TTITQ156S')
+dataseries = fred.get_series('PSAVERT')
 table = dataseries.reset_index()
 #see end of doc for explanation of line below
 table.columns = ['Date','Value']
 #optional line to clean up null values at head of table
-table = table.iloc[60:]
+#table = table.iloc[60:]
 print(table.head())
-table.to_sql("itunemploy",engine)
+table.to_sql("ussavings",engine)
 
 #have to do some manipulation data to return dataframe instead of series. per author:
 '''
