@@ -7,10 +7,13 @@ from sqlalchemy import create_engine
 import mysql.connector
 from datetime import datetime, timedelta
 from configparser import ConfigParser 
+import os
 
 
+directory = os.path.dirname(os.path.abspath(__file__))
+configfile = os.path.join(directory, 'config.ini')
 parser = ConfigParser()
-parser.read('config.ini')
+parser.read(configfile)
 
 host = parser.get('macrodashboard','host')
 user = parser.get('macrodashboard','user')
@@ -38,8 +41,11 @@ fred = Fred(api_key=frdkey)
 my_cursor = mydb.cursor()
 
 #import index file of all indicators
-FrdDF = pd.read_csv("FredList.csv", engine='python')
-FrdDailyDF = pd.read_csv("FredListDailies.csv", engine='python')
+FredList = os.path.join(directory, 'FredList.csv')
+FrdDF = pd.read_csv(FredList, engine='python')
+
+FredListDailies = os.path.join(directory, 'FredListDailies.csv')
+FrdDailyDF = pd.read_csv(FredListDailies, engine='python')
 
 #iterate through index file dataframe
 for index,row in FrdDF.iterrows():

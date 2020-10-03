@@ -7,9 +7,12 @@ from sqlalchemy import create_engine
 import mysql.connector
 from datetime import datetime, timedelta
 from configparser import ConfigParser 
+import os
 
+directory = os.path.dirname(os.path.abspath(__file__))
+configfile = os.path.join(directory, 'config.ini')
 parser = ConfigParser()
-parser.read('config.ini')
+parser.read(configfile)
 
 host = parser.get('macrodashboard','host')
 user = parser.get('macrodashboard','user')
@@ -34,7 +37,8 @@ engine = create_engine(engine)
 #create sql.connector cursor, often called "self"
 my_cursor = mydb.cursor()
 
-CheckDate = pd.read_csv("MasterList.csv", engine='python')
+MasterList = os.path.join(directory, 'MasterList.csv')
+CheckDate = pd.read_csv(MasterList, engine='python')
 
 '''
 Purpose of this script is to grab last 2 dates in SQL tables and export them to CSV so I can quickly compare against the last value I have in my macro dashboard. 
