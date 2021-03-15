@@ -40,6 +40,6 @@ my_cursor.execute("SELECT DATE FROM boebankrate ORDER BY DATE DESC LIMIT 1")
 LastRecord = my_cursor.fetchall()
 LastDate = LastRecord[0][0]
 StartDate = LastDate.date() + timedelta(days=1)
-RawUpdateTable = ql.get("BOE/IUDBEDR", start_date=StartDate, paginate=True)
-RawUpdateTable.to_sql("boebankrate",engine,if_exists='append')
+RawUpdateTable = ql.get("CHRIS/LIFFE_Z1", start_date=StartDate, paginate=True)
+RawUpdateTable.to_sql("ftse100fut",engine,if_exists='append')
 print(RawUpdateTable)

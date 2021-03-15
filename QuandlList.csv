@@ -45,3 +45,9 @@ USTREASURY/YIELD,usgovtyieldcurve
 FRED/ICSA,usjoblessclaims
 CHRIS/CME_W1,wheatfut
 CHRIS/SHFE_ZN1,zincfut
+CHRIS/CME_SP1,sp500fut
+CHRIS/LIFFE_Z1,ftse100fut
+CHRIS/MX_SCF1,tsxcompfut
+CHRIS/CME_GC1,goldfut
+CHRIS/ASX_AP1,asxfut
+CHRIS/CME_NK1,nikfut
