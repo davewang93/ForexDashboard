@@ -8,10 +8,10 @@ WSHOMCB,fredassetsmbs,wednesdays
 TREAST,fredassetstreas,wednesdays
 M2,m2,weekly (monthly lag?)
 SWPT,fedassetscbswaps,wednesdays
-WFCDA,fedassetsforeign,wednesdays
 RELACBW027SBOG,usrealestateloans,weekly (monthly lag?)
 ECBASSETSW,eucbassets,weekly
 DFII5,5yrtips,daily
 DFII30,30yrtips,daily
 T5YIE,5yrbrkevninf,daily
 T10YIE,10yrbrkevninf,daily
+WFCDA,fedassetsforeign,wednesdays
