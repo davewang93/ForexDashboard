@@ -26,7 +26,7 @@ qlkey = parser.get('keys','qlkey')
 #connect to specific db w/ both mysql connector and sqlalchemy. sqlalchemy for pushing and mysql for pulling
 mydb = mysql.connector.connect(
     host = host,
-    user = user,
+    user = user, 
     passwd = passwd,
     database = database,
 )

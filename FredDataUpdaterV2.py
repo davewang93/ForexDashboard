@@ -11,7 +11,7 @@ import os
 
 
 directory = os.path.dirname(os.path.abspath(__file__))
-configfile = os.path.join(directory, 'config.ini')
+configfile = os.path.join(directory, 'config.ini')   
 parser = ConfigParser()
 parser.read(configfile)
 

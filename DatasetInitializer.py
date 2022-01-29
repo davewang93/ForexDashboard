@@ -95,7 +95,7 @@ UMICH/SOC1 : umichcsi
 
 '''
 
-RawTable = ql.get("CHRIS/CME_NK1", paginate=True)
+RawTable = ql.get("BCHAIN/HRATE", paginate=True)
 
 #RawTable.columns = ['2yr','3yr','5yr','10yr','idx','nsw1','nsw2','nsw3']
 
@@ -104,7 +104,7 @@ RawTable = ql.get("CHRIS/CME_NK1", paginate=True)
 #print(RawTable)
 
 #push dataframe to sql table (creates table)
-RawTable.to_sql("nikfut",engine)
+RawTable.to_sql("btchashrate",engine)
 
 
 

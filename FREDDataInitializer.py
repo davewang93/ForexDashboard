@@ -105,16 +105,23 @@ CPMNACSCAB1GQFR : frgdp : quarterly
 CPMNACSCAB1GQDE : germgdp : quarterly
 CPMNACSCAB1GQIT : itgdp : quarterly
 PSAVERT : ussavings : monthly
+IHLCHGUS : indeedus	daily : (weekly lag)
+IHLCHGNEWUS	: indeednewus :	daily (weekly lag)
+DPCREDIT : discountrate : daily
+T10Y2Y : ustwoten :	daily
+OBMMIC30YF : 30yrmortgage :	daily
+
+
 
 '''
-dataseries = fred.get_series('T30YIEM')
+dataseries = fred.get_series('CBETHUSD')
 table = dataseries.reset_index()
 #see end of doc for explanation of line below
 table.columns = ['Date','Value']
 #optional line to clean up null values at head of table
 #table = table.iloc[60:]
 print(table.head())
-table.to_sql("30yrbrkevninf",engine)
+table.to_sql("ethcoinbase",engine)
 
 #have to do some manipulation data to return dataframe instead of series. per author:
 '''
